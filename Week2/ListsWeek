@@ -1,2 +1,12 @@
-input=int(input('State your age '))
-print('Your age, in 10 years, will be ',input+10)
+weekdays=[]
+
+weekdays.append("Monday")
+weekdays.append("Tuesday")
+weekdays.append("Wednesday")
+weekdays.append("Thursday")
+weekdays.append("Friday")
+weekdays.append("Saturday")
+weekdays.append("Sunday")
+
+
+print(weekdays)
