@@ -1,0 +1,6 @@
+Helt100=[]
+
+for i in range(1,100+1):
+  Helt100.append(i)
+print(Helt100)
+
