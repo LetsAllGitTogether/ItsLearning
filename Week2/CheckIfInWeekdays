@@ -1,0 +1,15 @@
+weekdays=[]
+
+weekdays.append("Monday")
+weekdays.append("Tuesday")
+weekdays.append("Wednesday")
+weekdays.append("Thursday")
+weekdays.append("Friday")
+weekdays.append("Saturday")
+weekdays.append("Sunday")
+
+
+if "THURSDAY" in weekdays:
+  print('Thursday is in Weekdays')
+elif "THURSDAY" not in weekdays:
+  print('Thursday is not in weekdays')
