@@ -1,0 +1,12 @@
+weekdays=[]
+
+weekdays.append("Monday")
+weekdays.append("Tuesday")
+weekdays.append("Wednesday")
+weekdays.append("Thursday")
+weekdays.append("Friday")
+weekdays.append("Saturday")
+weekdays.append("Sunday")
+
+
+print(weekdays[5])
