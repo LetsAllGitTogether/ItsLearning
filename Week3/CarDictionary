@@ -1,0 +1,15 @@
+
+
+Cars={}
+
+Cars['Tesla']='Snabbast acceleration i världen'
+Cars['Volvo']='Safest Car'
+Cars['Zonda']='Coolest car'
+
+Val=input('Välj en bilmodell: ')
+
+if Val in Cars:
+  print(f'Du har {Val}')
+else:
+  print(f'Vi har ingen information om denna modell')
+
