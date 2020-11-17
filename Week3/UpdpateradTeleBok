@@ -1,0 +1,50 @@
+list_of_friends=[]
+
+def add_friend(friendsname):
+  list_of_friends.append(friendsname)
+
+def remove_friend(skippa):
+  skippa = skippa-1
+  list_of_friends.pop(skippa)
+
+def print_menu():
+  string_menu =  '---Selection---\n'
+  string_menu += '1: Add \n'
+  string_menu += '2: View \n'
+  string_menu += '3: Remove \n'
+  string_menu += '4: Exit \n'
+  print(string_menu)
+
+def view_friends():
+  print(list_of_friends)
+
+
+
+selection=0
+
+
+while selection !=4:
+  print('\n')
+  print_menu()
+  selection = input('Make a selection ')
+  try:
+    selection=int(selection)
+    if selection == 1:
+      choise = input('Write friends name ')
+      add_friend(choise)
+    elif selection == 2:
+      print('\n')
+      print('Så här ser kontaktboken ut:')
+      view_friends()
+    elif selection == 3:
+      print('\n')
+      view_friends()
+      choise = int(input('Välj ett namn (index) att ta bort '))
+      remove_friend(choise)
+      print('Så här ser den uppdaterade kontaktboken ut:')
+      view_friends()
+  except:
+    print(f'\n{selection} is not a integer \n')
+
+
+
