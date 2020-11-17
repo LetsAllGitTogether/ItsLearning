@@ -1,0 +1,12 @@
+def compare(p,f):
+  if p>f:
+    return p
+  else:
+    return f
+
+print('Ange två värde för att jämföra vilket som är störst')
+x=input('Ange första värdet ')
+y=input('Ange andra värdet ')
+
+storst=compare(x,y)
+print(storst)
