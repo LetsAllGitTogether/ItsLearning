@@ -19,13 +19,14 @@ selection=0
 
 
 while selection !=3:
+  print_menu()
+  selection = input('Make a selection ')
   try:
-    print_menu()
-    selection=int(input('Make a selection '))
+    selection=int(selection)
     if selection == 1:
       choise = input('Write friends name ')
       add_friend(choise)
     elif selection == 2:
       view_friends()
   except:
-    print(f'\n{'selection'} is not an option (integer) \n')
+    print(f'\n{selection} is not an option (integer) \n')
