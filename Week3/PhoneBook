@@ -1,0 +1,31 @@
+list_of_friends=[]
+
+def add_friend(friendsname):
+  list_of_friends.append(friendsname)
+
+def print_menu():
+  string_menu =  '---Selection---\n'
+  string_menu += '1: Add \n'
+  string_menu += '2: View \n'
+  string_menu += '3: Exit \n'
+  print(string_menu)
+
+def view_friends():
+  print(list_of_friends)
+
+
+
+selection=0
+
+
+while selection !=3:
+  try:
+    print_menu()
+    selection=int(input('Make a selection '))
+    if selection == 1:
+      choise = input('Write friends name ')
+      add_friend(choise)
+    elif selection == 2:
+      view_friends()
+  except:
+    print(f'\n{'selection'} is not an option (integer) \n')
