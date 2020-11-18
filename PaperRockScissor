@@ -1,0 +1,35 @@
+import random
+
+options=['Rock' ,'Paper' ,'Scissor']
+
+def val(o1,o2):
+  if ((o1 == 1 and o2 == 3) or (o1 == 3 and o2 == 2) or (o1 == 2 and o2 == 3)):
+    print('You won this one!')
+    return (1, 0)
+  elif o1 == o2:
+    print('Ops, a tie')
+  else:
+    return (0,1)
+    print('Sorry, you lost this one :/ ')
+
+def print_menu():
+  string_menu =  '---Selection---\n'
+  string_menu += '1: Rock \n'
+  string_menu += '2: Paper \n'
+  string_menu += '3: Scissor \n'
+  string_menu += '4: Exit \n'
+  print(string_menu)
+
+Pscore = 0
+Cscore = 0
+
+
+while Pscore < 3 or Cscore < 3:
+  print(options)
+  Pchoice = input('Choose your next move')
+  Cchoice = random.randint(1,3)
+  try:
+    Pchoice = int(Pchoice)
+    Pscore, Cscore = val(Pchoice, Cchoice)
+  except:
+    print('Input a integer')
