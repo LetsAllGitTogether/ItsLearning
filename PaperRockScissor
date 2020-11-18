@@ -2,6 +2,7 @@ import random
 
 options=['Rock' ,'Paper' ,'Scissor']
 
+
 def val(o1,o2):
   if ((o1 == 1 and o2 == 3) or (o1 == 3 and o2 == 2) or (o1 == 2 and o2 == 1)):
     print('You won this one!\n')
@@ -22,27 +23,35 @@ def print_menu():
   string_menu += '4: Exit \n'
   print(string_menu)
 
-Pscore = 0
-Cscore = 0
-
-def Who_won():
-  if Pscore == 3:
-    print('Congratz! You won the prestigious game')
-  elif Cscore == 3:
-    print('Sorry, you lost')
 
 def The_game():
-print('Lets play a game of:')
-print_menu()
-while Pscore < 3 and Cscore < 3:
-  Pchoice = input('Choose your next move ')
-  Cchoice = random.randint(1,3)
-  try:
-    Pchoice = int(Pchoice)
-    print(f'Your Choice was: {Pchoice}\nComputer chose: {Cchoice}')
-    tempPscore, tempCscore = val(Pchoice, Cchoice)
-    Pscore += tempPscore
-    Cscore += tempCscore
-    print(f'Your Score: \t{Pscore} \nComputer Score: {Cscore}')
-  except:
-    print('Input a integer')
+  Pscore = 0
+  Cscore = 0
+  print('Lets play a game of:')
+  print_menu()
+  while Pscore < 3 and Cscore < 3:
+    Pchoice = input('Choose your next move ')
+    Cchoice = random.randint(1,3)
+    try:
+      Pchoice = int(Pchoice)
+      POpInd = options[(Pchoice-1)]
+      COpInd = options[(Cchoice-1)]
+      print(f'Your Choice was: {POpInd}\nComputer chose:  {COpInd}')
+      tempPscore, tempCscore = val(Pchoice, Cchoice)
+      Pscore += tempPscore
+      Cscore += tempCscore
+      print(f'Your Score: \t{Pscore} \nComputer Score: {Cscore}\n')
+    except:
+      print('Input a integer')
+  return (Pscore, Cscore)
+
+
+def Who_won(h, g):
+  if h == 3:
+    print('Congratz! You won the prestigious game')
+  elif g == 3:
+    print('Sorry, you lost the game')
+
+
+Pscore, Cscore = The_game()
+Who_won(Pscore, Cscore)
