@@ -17,10 +17,13 @@ def val(o1,o2):
 
 def print_menu():
   string_menu =  '---Selection---\n'
-  string_menu += '1: Rock \n'
-  string_menu += '2: Paper \n'
-  string_menu += '3: Scissor \n'
-  string_menu += '4: Exit \n'
+  string_menu += '1: '
+  string_menu += options[(0)]
+  string_menu += '\n2: '
+  string_menu += options[(1)]
+  string_menu += '\n3: '
+  string_menu += options[(2)]
+  string_menu += '\n4: Exit \n'
   print(string_menu)
 
 
