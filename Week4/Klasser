@@ -1,0 +1,15 @@
+class Person:
+  first_name = ''
+  last_name = ''
+  phone_number = ''
+
+Daniel = Person()
+
+Daniel.first_name = 'Daniel'
+Daniel.last_name = 'Högberg'
+Daniel.phone_number = '0708652653'
+
+
+print(Daniel.first_name)
+print(Daniel.last_name)
+print(Daniel.phone_number)
