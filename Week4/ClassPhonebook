@@ -1,0 +1,62 @@
+list_of_friends=[]
+
+class Friend:
+  def __init__(self, first_name, last_name, phone_number):
+    self.first_name = first_name
+    self.last_name = last_name
+    self.phone_number = phone_number
+
+  def print_info(self):
+    print(f'Förnamn: {self.first_name}, efternamn: {self.last_name} kan nås på nummer: {self.phone_number}')
+
+
+
+def add_friend():
+  first_name = input('First name please: ')
+  last_name = input('Last name please: ')
+  phone_number = input('Want your phone number: ')
+  info = Friend(first_name, last_name, phone_number)
+  list_of_friends.append(info)
+  return list_of_friends
+
+def remove_friend(skippa):
+  skippa = skippa-1
+  list_of_friends.pop(skippa)
+
+def print_menu():
+  string_menu =  '---Selection---\n'
+  string_menu += '1: Add \n'
+  string_menu += '2: View \n'
+  string_menu += '3: Remove \n'
+  string_menu += '4: Exit \n'
+  print(string_menu)
+
+def view_friends():
+  Friend.print_info()
+
+
+
+selection=0
+
+
+while selection !=4:
+  print('\n')
+  print_menu()
+  selection = input('Make a selection ')
+#  try:
+  selection=int(selection)
+  if selection == 1:
+    add_friend()
+  elif selection == 2:
+    print('\n')
+    print('Så här ser kontaktboken ut:')
+    view_friends()
+  elif selection == 3:
+    print('\n')
+    view_friends()
+    choise = int(input('Välj ett namn (index) att ta bort '))
+    remove_friend(choise)
+    print('Så här ser den uppdaterade kontaktboken ut:')
+    view_friends()
+#  except:
+#  print(f'\n{selection} is not a integer \n')
