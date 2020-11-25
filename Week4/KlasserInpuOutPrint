@@ -15,5 +15,5 @@ def add_person():
   Individ = Person(first_name, last_name, phone_number)
   return Individ
 
-Svaren = add_person()
-Person.print_info(Svaren)
+Individ = add_person()
+Individ.print_info()
