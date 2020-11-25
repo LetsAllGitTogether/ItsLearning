@@ -17,7 +17,7 @@ def add_friend():
   phone_number = input('Want your phone number: ')
   info = Friend(first_name, last_name, phone_number)
   list_of_friends.append(info)
-  return list_of_friends
+  return info
 
 def remove_friend(skippa):
   skippa = skippa-1
@@ -31,8 +31,8 @@ def print_menu():
   string_menu += '4: Exit \n'
   print(string_menu)
 
-def view_friends():
-  Friend.print_info()
+def view_friends(info):
+  Friend.print_info(info)
 
 
 
@@ -43,20 +43,20 @@ while selection !=4:
   print('\n')
   print_menu()
   selection = input('Make a selection ')
-#  try:
-  selection=int(selection)
-  if selection == 1:
-    add_friend()
-  elif selection == 2:
+  try:
+   selection=int(selection)
+   if selection == 1:
+     info = add_friend()
+   elif selection == 2:
     print('\n')
     print('Så här ser kontaktboken ut:')
-    view_friends()
-  elif selection == 3:
+    view_friends(info)
+   elif selection == 3:
     print('\n')
     view_friends()
     choise = int(input('Välj ett namn (index) att ta bort '))
     remove_friend(choise)
     print('Så här ser den uppdaterade kontaktboken ut:')
     view_friends()
-#  except:
-#  print(f'\n{selection} is not a integer \n')
+  except:
+   print(f'\n{selection} is not a integer \n')
