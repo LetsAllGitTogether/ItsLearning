@@ -1,0 +1,7 @@
+list_of_numbers = []
+
+with open("my_file.txt", "r") as f:
+    for line in f.readlines():
+        list_of_numbers.append(int(line.strip()))
+
+print(list_of_numbers)
