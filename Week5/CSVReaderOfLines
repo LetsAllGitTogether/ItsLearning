@@ -1,0 +1,6 @@
+import csv
+
+with open("time_report.csv", "r") as f:
+    csv_reader = csv.reader(f)
+    for row in csv_reader:
+        print(f"{row[0]} {row[1]} {row[2]}")
